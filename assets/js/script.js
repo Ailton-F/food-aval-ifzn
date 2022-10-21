@@ -1,31 +1,34 @@
+var chart = new CanvasJS.Chart("graphic", {
+    animationEnabled: true,
+    
+    title:{
+        text:"Avaliação da refeição da instituição."
+    },
+    axisX:{
+        interval: 1
+    },
+    data: [{
+        type: "bar",
+        name: "companies",
+        axisYType: "secondary",
+        color: "#014D65",
+        dataPoints: [
+            { y: 3, label: "Ótimo" },
+            { y: 7, label: "Bom" },
+            { y: 5, label: "Ruim" }
+        ]
+    }]
+});
+chart.render();
+
 $('.aval').click(function(){
     $.ajax({
         url: '../../aval-buttons.html',
     }).done(function(res){
         $('.btn-container').empty();
         $('.btn-container').append(res);
-
-        let chartDom = $('.graphic');
-        let myChart = echarts.init(chartDom);
-        let option;
-
-        option = {
-            xAxis: {
-                type: 'category',
-                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-            },
-            yAxis: {
-                type: 'value'
-            },
-            series: [
-                {
-                data: [120, 200, 150, 80, 70, 110, 130],
-                type: 'bar'
-                }
-            ]
-        };
-
-        option && myChart.setOption(option);
+        
+        
         // let value_c1 = parseInt($('.contador-1>span').text());
         // let value_c2 = parseInt($('.contador-2>span').text());
         // let value_c3 = parseInt($('.contador-3>span').text());
