@@ -18,3 +18,12 @@ body{
     padding: 1.5rem;
     width: 13rem;
 }
+
+
+.canvasjs-chart-container{
+    height: 18em;
+}
+
+.canvasjs-chart-credit{
+    display: none;
+}
